@@ -289,7 +289,7 @@ func scanOne(in chan *scanInfo, out chan *NodeInfo, done chan int) {
 		client := wsman.NewClient(endpoint, c.username, c.password)
 		if hasIdrac(client) {
 			node := &NodeInfo{
-				PmType:     "pxe_drac",
+				PmType:     "pxe_ipmitool",
 				PmUser:     c.username,
 				PmPassword: c.password,
 				PmAddr:     c.addr.String(),
