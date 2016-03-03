@@ -297,7 +297,7 @@ func scanOne(in chan *scanInfo, out chan *NodeInfo, done chan int) {
 			log.Printf("Address %s is not useable!", c.addr.String())
 			continue
 		}
-		client := wsman.NewClient(endpoint, c.username, c.password)
+		client := wsman.NewClient(endpoint, c.username, c.password, false)
 		if hasIdrac(client) {
 			node := &NodeInfo{
 				PmType:     "pxe_ipmitool",
